@@ -16,11 +16,11 @@ export class RoomsListComponent implements OnInit, OnChanges {
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['title']) {
-      this.title = changes['title'].currentValue.toupperCase();
+      this.title = changes['title'].currentValue.toUpperCase();
     }
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   selectRoom(room: RoomList) {
