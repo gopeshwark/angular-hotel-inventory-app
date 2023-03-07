@@ -36,7 +36,7 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    this.roomsService.getRooms().subscribe(room => {
+    this.roomsService.getRooms$.subscribe(room => {
       this.roomList = room;
     })
   }
