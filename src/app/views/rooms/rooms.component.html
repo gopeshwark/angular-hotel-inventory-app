@@ -1,6 +1,10 @@
 <!-- <h1>{{hotelName}}</h1> -->
 <app-header></app-header>
-<button class="btn btn-primary" (click)="addRoom()">Add Room</button>
+<div class="d-flex gap-3">
+  <button class="btn btn-primary" (click)="addRoom()">Add Room</button>
+  <button class="btn btn-primary" (click)="editRoom()">Edit Room</button>
+  <button class="btn btn-primary" (click)="deleteRoom()">Delete Room</button>
+</div>
 <div *ngIf="rooms.availableRooms > 0">
   <app-rooms-list [rooms]="roomList" [title]="title" (selectedRoom)="selectRoom($event)"></app-rooms-list>
 </div>
