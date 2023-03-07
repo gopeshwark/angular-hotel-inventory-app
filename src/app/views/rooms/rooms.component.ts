@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, DoCheck, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { RoomsService } from 'src/app/services/rooms/rooms.service';
@@ -25,7 +26,7 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
 
   @ViewChild(HeaderComponent) headerComponent!: HeaderComponent
 
-  constructor(private roomsService: RoomsService) { }
+  constructor(private roomsService: RoomsService, private http: HttpClient) { }
   ngAfterViewInit() {
     // throw new Error('Method not implemented.');
     this.headerComponent.title = 'Rooms View'
@@ -35,7 +36,11 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    this.roomList = this.roomsService.getRooms()
+    this.roomsService.getRooms().subscribe(room => {
+      console.log(room);
+
+      this.roomList = room;
+    })
   }
 
   toggle() {
