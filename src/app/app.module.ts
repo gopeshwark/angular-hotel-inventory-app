@@ -9,6 +9,8 @@ import { RoomsListComponent } from './components/rooms-list/rooms-list.component
 import { HeaderComponent } from './components/header/header.component';
 import { RequestInterceptor } from './request.interceptor';
 import { InitService } from './init.service';
+import { AppRoutingModule } from './app-routing.module';
+import { EmployeeComponent } from './views/employee/employee.component';
 
 const initFactory = (initService: InitService) => {
   return () => initService.init();
@@ -20,11 +22,13 @@ const initFactory = (initService: InitService) => {
     RoomsComponent,
     RoomsListComponent,
     HeaderComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

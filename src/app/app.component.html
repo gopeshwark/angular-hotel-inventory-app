@@ -1,4 +1,11 @@
 <!-- <app-rooms></app-rooms> -->
-<div>
+<!-- <div>
   <ng-template #user></ng-template>
+</div> -->
+<div>
+  <div class="d-flex gap-2">
+    <a [routerLink]="'rooms'">Rooms</a>
+    <a [routerLink]="'employee'">Employee</a>
+  </div>
+  <router-outlet></router-outlet>
 </div>
