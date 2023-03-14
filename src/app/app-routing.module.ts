@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { RoomsComponent } from './views/rooms/rooms.component';
 import { EmployeeComponent } from './views/employee/employee.component';
+import { NotFoundComponent } from './views/not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'rooms', component: RoomsComponent },
   { path: 'employee', component: EmployeeComponent },
   { path: '', redirectTo: "/rooms", pathMatch: 'full' },
+  { path: "**", component: NotFoundComponent },
 ];
 
 @NgModule({

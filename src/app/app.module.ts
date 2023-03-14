@@ -11,6 +11,14 @@ import { RequestInterceptor } from './request.interceptor';
 import { InitService } from './init.service';
 import { AppRoutingModule } from './app-routing.module';
 import { EmployeeComponent } from './views/employee/employee.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { NotFoundComponent } from './views/not-found/not-found.component';
 
 const initFactory = (initService: InitService) => {
   return () => initService.init();
@@ -23,12 +31,20 @@ const initFactory = (initService: InitService) => {
     RoomsListComponent,
     HeaderComponent,
     EmployeeComponent,
+    AppNavComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
