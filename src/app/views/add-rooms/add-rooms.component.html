@@ -1,30 +1,30 @@
-<div *ngIf="successMessage" class="alert alert-succes">
+<div *ngIf="successMessage" class="alert alert-success">
   {{successMessage}}
 </div>
 
-<form class="d-flex flex-column gap-4" (ngSubmit)="AddRoom()">
+<form #roomsForm="ngForm" class="d-flex flex-column gap-4" (ngSubmit)="AddRoom()">
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.roomType " type="text" name="roomType" placeholder="Room Type">
+    <input required class="form-control" [(ngModel)]="room.roomType " type="text" name="roomType" placeholder="Room Type">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.amenities " type="text" name="amenities" placeholder="Amenities">
+    <input required class="form-control" [(ngModel)]="room.amenities " type="text" name="amenities" placeholder="Amenities">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.price " type="number" name="price" placeholder="Roome Price per night">
+    <input required class="form-control" [(ngModel)]="room.price " type="number" name="price" placeholder="Roome Price per night">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.photos " type="text" name="photos" placeholder="Photos (Provide link)">
+    <input required class="form-control" [(ngModel)]="room.photos " type="text" name="photos" placeholder="Photos (Provide link)">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.checkinTime " type="datetime" name="checkinTime" placeholder="Check-in Time">
+    <input required class="form-control" [(ngModel)]="room.checkinTime " type="datetime" name="checkinTime" placeholder="Check-in Time">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.checkoutTime " type="datetime" name="checkoutTime" placeholder="Check-out Time">
+    <input required class="form-control" [(ngModel)]="room.checkoutTime " type="datetime" name="checkoutTime" placeholder="Check-out Time">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="room.rating " type="number" name="rating" placeholder="Rating">
+    <input required class="form-control" [(ngModel)]="room.rating " type="number" name="rating" placeholder="Rating">
   </div>
   <div>
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button [disabled]="roomsForm.invalid" class="btn btn-primary" type="submit">Submit</button>
   </div>
 </form>

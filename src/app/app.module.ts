@@ -22,6 +22,7 @@ import { NotFoundComponent } from './views/not-found/not-found.component';
 import { RoomsBookingComponent } from './views/rooms-booking/rooms-booking.component';
 import { AddRoomsComponent } from './views/add-rooms/add-rooms.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './views/login/login.component';
 
 const initFactory = (initService: InitService) => {
   return () => initService.init();
@@ -38,6 +39,7 @@ const initFactory = (initService: InitService) => {
     NotFoundComponent,
     RoomsBookingComponent,
     AddRoomsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

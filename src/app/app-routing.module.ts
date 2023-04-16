@@ -6,13 +6,15 @@ import { EmployeeComponent } from './views/employee/employee.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
 import { RoomsBookingComponent } from './views/rooms-booking/rooms-booking.component';
 import { AddRoomsComponent } from './views/add-rooms/add-rooms.component';
+import { LoginComponent } from './views/login/login.component';
 
 const routes: Routes = [
   { path: 'rooms', component: RoomsComponent },
   { path: 'rooms/add', component: AddRoomsComponent },
   { path: 'rooms/:id', component: RoomsBookingComponent },
   { path: 'employee', component: EmployeeComponent },
-  { path: '', redirectTo: "/rooms", pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: "/login", pathMatch: 'full' },
   { path: "**", component: NotFoundComponent },
 ];
 
